@@ -22,7 +22,7 @@ const Navbar = (props) => {
                     P
                 </IconButton>
                 <Typography variant="h6" color={'inherit'} className={classes.title}></Typography>
-                <Switch />
+                <Switch onChange={context.toogleTheme}/>
                 <div className={classes.grow} />
                 <div className={classes.search}>
                     <div className={classes.searchIcon}>
