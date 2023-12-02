@@ -9,7 +9,20 @@ import { Search as SearchIcon } from "@mui/icons-material";
 import useStyles from "./styles/Navbar";
 
 
-
+const content = {
+    english: {
+      search: "Search",
+      flag: "🇬🇧"
+    },
+    french: {
+      search: "Chercher",
+      flag: "🇫🇷"
+    },
+    spanish: {
+      search: "Buscar",
+      flag: "🇪🇸"
+    }
+  };
 
 const Navbar = (props) => {
     const context = useContext(ThemeContext)
@@ -21,7 +34,7 @@ const Navbar = (props) => {
         <AppBar position="static" color="primary">
             <Toolbar>
                 <IconButton className={classes.menuButton} color="inherit">
-                    {value.language}
+                    {value.language} - {content[value.language].search}
                 </IconButton>
                 <Typography variant="h6" color={'inherit'} className={classes.title}></Typography>
                 <Switch onChange={context.toogleTheme} />

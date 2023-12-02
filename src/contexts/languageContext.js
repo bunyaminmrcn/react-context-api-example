@@ -18,3 +18,11 @@ export default class LanguageProvider extends Component {
         return <LanguageContext.Provider value={{ language: this.state.language, changeLanguage: this.changeLanguage }}>{this.props.children}</LanguageContext.Provider>
     }
 }
+
+
+
+export const withLanguageContext = Component => props => (
+    <LanguageContext.Consumer>
+        { value => <Component languageContext={value} {...props}/>}
+    </LanguageContext.Consumer>
+)
